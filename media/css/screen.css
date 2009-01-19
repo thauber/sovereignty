@@ -1,0 +1,93 @@
+/*
+#F6FFE0
+#E2F0D6
+#BDD684
+#95AB63
+#10222B
+*/
+body {
+    background-color: #F6FFE0;
+    color: #10222B;
+    font-size: 16px;
+}
+a {
+    color: #95AB63;
+    text-decoration: none;
+}
+a:hover {
+    color: #BDD684;
+}
+p.info {
+    padding: 10px;
+    color: #F6FFE0;
+    border: 5px solid #BDD684;
+    background-color: #10222B;
+}
+ul.errorlist {
+    color: red;
+    text-align: center;
+}
+ul.errorlist li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#nav {
+    text-align: center;
+}
+#nav li {
+    display: inline;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+#nav li a {
+    display: inline;
+    display: inline-block;
+    margin: 0 0 0 0;
+    padding: 10px 10px 10px 10px;
+    background-color: #BDD684;
+    color: #10222B;
+}
+#nav li a:hover {
+    background-color: #95AB63;
+}
+
+
+form {
+    background-color: #E2F0D6;
+    padding: 10px;
+    margin: 0 0 16px 0;
+    border: 1px solid #BDD684;
+}
+form ul li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px dotted #95AB63;
+}
+form ul li label {
+    display: block;
+    float: left;
+    width: 150px;
+}
+form ul li input[type="text"],form ul li input[type="password"] {
+    width: 300px;
+    color: #10222B;
+    font-size: 16px;
+    border: 1px solid #95AB63;
+}
+form ul.errorlist {
+    text-align: left;
+    margin-left: 150px;
+}
+form ul.errorlist li {
+    border: none;
+}
+
+
+#footer {
+    text-align: center;
+}
+#footer li { display: inline; }

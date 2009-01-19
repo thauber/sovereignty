@@ -5,9 +5,10 @@
 {% block main_content %}
     {% if form.errors %}
         <ul class="errorlist">
-            <li>Your username and password didn't match. Please try again.  If you haven't yet registered, you should <a href="{% url registration_register %}">register now</a>.</li>
+            <li>Your username and password didn't match. Please try again. If you haven't yet registered, you should <a href="{% url registration_register %}">register now</a>.</li>
         </ul>
     {% endif %}
+    <p class="info">Not yet registered? <a href="{% url registration_register %}">Register now</a> to become a member of the site! Can&rsquo;t remember your password?  <a href="{% url auth_password_reset %}">Click here</a> to generate a new one.</p>
     <form method="POST" action="">
         <ul>
             <li><label for="id_username">Username: </label>{{ form.username }}</li>
@@ -16,6 +17,4 @@
         <input type="submit" value="Login" />
         <input type="hidden" name="next" value="{{ next }}" />
     </form>
-    <p class="info">Not yet registered? <a href="{% url registration_register %}">Register now</a> to become a member of the site!</p>
-    <p class="info">Can&rsquo;t remember your password?  <a href="{% url auth_password_reset %}">Click here</a> to generate a new one.</p>
 {% endblock %}
