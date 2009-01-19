@@ -48,7 +48,7 @@ MEDIA_URL = 'http://localhost:8000/media/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'f@33k2udv*1$4uzt2h9+k_u_%r=#zx+j#v&9_b^(4^ps1-9la7'
@@ -83,5 +83,6 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'avatar',
     'registration',
-    'pagination'
+    'pagination',
+    'south',
 )
