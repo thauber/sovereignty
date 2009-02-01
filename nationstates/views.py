@@ -1,5 +1,10 @@
-# Create your views here.
 from django.views.generic.list_detail import object_detail
+from django.utils.translation import ugettext as _
+from django.shortcuts import render_to_response, get_object_or_404
+from django.http import Http404, HttpResponseRedirect
+from django.template import RequestContext
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from nationstates.models import *
 
 def nation(request, state_slug):
@@ -8,17 +13,27 @@ def nation(request, state_slug):
         slug=nation_slug,
         template_name='nationstates/state.html')
 
+@login_required
 def issue(request, issue_id):
-    return object_detail(
-        Issue.objects.all(),
-        object_id=issue_id,
-        template_name='nationstates/issue.html')
+    issue = get_object_or_404(Issue, id=issue_id)
+    form = IssueForm(issue, request.POST or None)
+    if form.is_valid():
+        choice = IssueChoice.objects.get(id=form.cleaned_data['solutions'])
+        user.state.make_choice(issue, choice)
+        
 
 def stats(request, state_slug):
     return object_detail(
         State.objects.all(),
         slug=state_slug,
         template_name='nationstates/state_stats.html')
+
+@login_required
+def home(request):
+    try:
+        Nation.get.object(user=request.user)
+    except Nation.DoesNotExist, e:
+        raise e
 
 def relation_list(request, relation_type, state_slug, template_name="nationstates/relation_list.html"):
 
@@ -43,7 +58,7 @@ def relate(request, state_slug, relation_type, template_name="nationstates/relat
     state = get_object_or_404(State, slug=state_slug)
     rel, created = Relation.objects.get_or_create(from_state=request.user.state, 
         to_state=state)
-    next = _get_next(request)    
+    # next = _get_next(request)    
     # TODO write _get_next
     # if next and next != request.path:
     #     request.user.message_set.create(
