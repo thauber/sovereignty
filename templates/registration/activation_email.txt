@@ -3,7 +3,7 @@ Welcome to Sovereignty!
 We hope that you will enjoy the site, but first you will need to activate your 
 account with us.  To do so, please navigate to the link below:
     
-    {{site.url}}{% url registration_activate activation_key %}
+     {# {{site.url}}{% url registration_activate activation_key %} #}
     
 For your own records, your activation key is: {{ activation_key }}
 

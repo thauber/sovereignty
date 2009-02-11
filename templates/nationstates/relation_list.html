@@ -1,0 +1,8 @@
+{% block title %}{{block.super}} - {{relation_type.title}}{% endblock %}
+
+{% block main_content %}
+    <h1>{{relation_type.title}}</h1>
+    <ul>
+        {% block list %}{% endblock %}
+    <ul>
+{% endblock %}

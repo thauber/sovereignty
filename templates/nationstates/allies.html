@@ -1,0 +1,7 @@
+{% extends "nationstates/relation_list.html" %}
+
+{% block list %}
+    {% for state in complete_relation %}
+        <li>{{state}}</li>
+    {% endfor %}
+{% endblock %}
